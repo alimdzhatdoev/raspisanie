@@ -1,0 +1,26 @@
+body {
+  background: #424242;
+}
+
+.loginBlock {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.loginPlaceholder,
+.passwordPlaceholder {
+  width: 300px;
+  height: 24px;
+  background: #fa25fa;
+  border-radius: 6px;
+}
+.loginButton {
+  width: 250px;
+  height: 24px;
+  background: #aaa;
+  border-radius: 6px;
+}

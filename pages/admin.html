@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body onload="openTab(event, 'Tab1')">
+
+    <header>
+        <section class="headerBlock">
+            <div onclick="openTab(event, 'Tab1')" class="headerPart timetable">
+                <div class="triangle activeHeaderTR"></div>
+                <div>Расписание</div>
+            </div>
+            <div onclick="openTab(event, 'Tab2')" class="headerPart students">
+                <div class="triangle"></div>
+                <div>Студенты</div>
+            </div>
+            <div onclick="openTab(event, 'Tab3')" class="headerPart teachers">
+                <div class="triangle"></div>
+                <div>Преподаватели</div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+        <div id="Tab1" class="tabcontent"> 123</div>
+        <div id="Tab2" class="tabcontent"> 234</div>
+        <div id="Tab3" class="tabcontent"> 345</div>
+
+    </main>
+
+
+
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>
