@@ -2,6 +2,8 @@ import { tipe1, tipe2, tipe3, tipe4, tipe5, tipe6 } from '/tipes/tipes.js';
 
 const customBlock = document.querySelector(".showBlock");
 const customMenu = document.querySelector(".custom-menu");
+let customBlockId = customBlock.getAttribute("id");
+console.log(customBlockId);
 
 customBlock.addEventListener("contextmenu", function (event) {
   event.preventDefault();

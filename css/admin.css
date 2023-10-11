@@ -111,24 +111,26 @@ header .activeHeaderTR {
   background-color: var(--user-bg);
 }
 
-.headerBlock_right__img{
-    width: 25px;
-    cursor: pointer;
+.headerBlock_right__img {
+  width: 25px;
+  cursor: pointer;
 }
 
-.headerBlock_right__img img{
-    width: 100%;
+.headerBlock_right__img img {
+  width: 100%;
 }
-
 
 /* ____________________________________ */
-
 
 .bodyTable {
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--color-primary); /* maybe temporary border  */
 }
 
 .custom-block {
@@ -271,4 +273,43 @@ header .activeHeaderTR {
   border-bottom: 1px solid var(--color-primary);
 }
 
+/* ___________________ */
 
+.lesTeachBlock {
+  display: flex;
+}
+
+.lesTeach {
+  display: flex;
+  /* padding-left: 10px; */
+  width: 300px;
+}
+
+.numb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--color-primary); /* maybe temporary border  */
+}
+
+.lesson {
+  display: flex;
+}
+
+.course {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.courseT {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.courseT input {
+  height: 40px;
+}
