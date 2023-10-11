@@ -1,3 +1,12 @@
+// let myMode = localStorage.getItem("mode");
+
+// if (myMode == 'dark'){
+//   document.body.classList.add('dark-mode-variables');
+// } else {
+//   document.body.classList.remove('dark-mode-variables');
+// }
+
+
 function openTab(event, tabName) {
     var i, tabcontent, tablinks;
   
@@ -24,3 +33,31 @@ function openTab(event, tabName) {
       event.currentTarget.childNodes[1].className += " activeHeaderTR";
     }
   }
+
+  
+const light = document.querySelector('.light');
+const theme = localStorage.getItem('theme');
+
+if (theme == 'dark') {
+  document.body.classList.add('dark-mode-variables');
+  light.setAttribute('src', '/ref/light.png');
+} else {
+  light.setAttribute('src', '/ref/dark.png'); 
+}
+
+light.addEventListener('click', () => {
+
+  document.body.classList.toggle('dark-mode-variables');
+  let theme = "light";
+  if (document.body.classList.contains("dark-mode-variables")) {
+    theme = "dark"; 
+    light.setAttribute('src', '/ref/light.png');
+  } else {
+    light.setAttribute('src', '/ref/dark.png'); 
+  }
+  localStorage.setItem("theme", theme);
+});
+
+
+
+

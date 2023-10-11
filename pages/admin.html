@@ -14,37 +14,128 @@
 
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body onload="openTab(event, 'Tab1')">
 
     <header>
         <section class="headerBlock">
-            <div onclick="openTab(event, 'Tab1')" class="headerPart timetable">
-                <div class="triangle activeHeaderTR"></div>
-                <div>Расписание</div>
+            <div class="headerBlock_left">
+                <div onclick="openTab(event, 'Tab1')" class="headerPart timetable">
+                    <div class="triangle activeHeaderTR"></div>
+                    <div>Расписание</div>
+                </div>
+                <div onclick="openTab(event, 'Tab2')" class="headerPart students">
+                    <div class="triangle"></div>
+                    <div>Студенты</div>
+                </div>
+                <div onclick="openTab(event, 'Tab3')" class="headerPart teachers">
+                    <div class="triangle"></div>
+                    <div>Преподаватели</div>
+                </div>
             </div>
-            <div onclick="openTab(event, 'Tab2')" class="headerPart students">
-                <div class="triangle"></div>
-                <div>Студенты</div>
-            </div>
-            <div onclick="openTab(event, 'Tab3')" class="headerPart teachers">
-                <div class="triangle"></div>
-                <div>Преподаватели</div>
+
+
+            <div class="headerBlock_right">
+                <div class="headerBlock_right__img">
+                    <img src="/ref/dark.png" class="light">
+                </div>
+
+                <div class="headerBlock_right__user"></div>
+
             </div>
         </section>
     </header>
 
     <main>
 
-        <div id="Tab1" class="tabcontent"> 123</div>
+        <div id="Tab1" class="tabcontent">
+
+            <!-- ____________________________________________________________ -->
+            <div class="bodyTable">
+                
+                <div class="showBlock">
+                    <div class="tipe">
+                        <input type="text" placeholder="Постоянно">
+                    </div>
+                </div>
+
+                <div class="custom-menu">
+                    <div class="btn btn_tipe_6 addPad">Постоянно</div>
+                    <div class="btn btn_tipe_1">
+                        <div class="blockText">
+                            <div class="block_ch addPad addBB">Числитель</div>
+                            <div class="block_z addPad">Знаменатель</div>
+                        </div>
+                    </div>
+                    <div class="btn btn_tipe_2">
+                        <div class="blockText blockTipeChange">
+                            <div class="block_p1">Подгруппа 1</div>
+                            <div class="block_p2">Подгруппа 2</div>
+                        </div>
+                    </div>
+                    <div class="btn btn_tipe_3">
+                        <div class="blockText">
+                            <div class="block_ch">
+                                <div class="blockText blockTipeChange addBB">
+                                    <div class="block_p1">Подгруппа 1 (Ч)</div>
+                                    <div class="block_p2">Подгруппа 2 (Ч)</div>
+                                </div>
+                            </div>
+                            <div class="block_z addPad">Знаменатель</div>
+                        </div>
+                    </div>
+                    <div class="btn btn_tipe_4">
+                        <div class="blockText">
+                            <div class="block_ch addPad addBB">Числитель</div>
+                            <div class="block_z">
+                                <div class="block_ch">
+                                    <div class="blockText blockTipeChange">
+                                        <div class="block_p1">Подгруппа 1 (З)</div>
+                                        <div class="block_p2">Подгруппа 2 (З)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn_tipe_5">
+                        <div class="blockText">
+                            <div class="block_ch">
+                                <div class="blockText blockTipeChange addBB">
+                                    <div class="block_p1">Подгруппа 1 (Ч)</div>
+                                    <div class="block_p2">Подгруппа 2 (Ч)</div>
+                                </div>
+                            </div>
+                            <div class="block_z">
+                                <div class="blockText blockTipeChange">
+                                    <div class="block_p1">Подгруппа 1 (З)</div>
+                                    <div class="block_p2">Подгруппа 2 (З)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ____________________________________________________________ -->
+
+         
+        </div>
+
+
         <div id="Tab2" class="tabcontent"> 234</div>
+
+        
         <div id="Tab3" class="tabcontent"> 345</div>
 
     </main>
 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script src="/js/admin.js"></script>
 </body>
 
