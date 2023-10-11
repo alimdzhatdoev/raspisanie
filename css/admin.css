@@ -143,11 +143,12 @@ header .activeHeaderTR {
   /* display: none; */
   width: 300px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 75px;
+  right: 15px;
   transform: translate(350px, 0);
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
   padding: 15px;
   transition: all 0.5s ease-in-out;
 }
@@ -160,7 +161,8 @@ header .activeHeaderTR {
 
 .btn {
   width: 100%;
-  border: 1px solid #000;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-white);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -178,7 +180,7 @@ header .activeHeaderTR {
 }
 
 .btn:hover {
-  box-shadow: inset 0 0 5px #000000;
+  box-shadow: inset 0 0 5px var(--color-primary);
 }
 
 .tipe {
@@ -191,7 +193,7 @@ header .activeHeaderTR {
   border: none;
   outline: none;
   padding: 0 10px;
-  border: 1px solid #000;
+  border: 1px solid var(--color-primary);
   min-height: 40px;
 }
 
@@ -247,7 +249,7 @@ header .activeHeaderTR {
 }
 
 .block_p1 {
-  border-right: 1px solid #000;
+  border-right: 1px solid var(--color-primary);
   width: 100%;
   padding: 10px;
 }
@@ -266,7 +268,7 @@ header .activeHeaderTR {
 }
 
 .addBB {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--color-primary);
 }
 
 
