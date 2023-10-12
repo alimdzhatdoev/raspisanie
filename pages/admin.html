@@ -28,9 +28,13 @@
                 </div>
                 <div onclick="openTab(event, 'Tab2')" class="headerPart students">
                     <div class="triangle"></div>
+                    <div>Группы</div>
+                </div>
+                <div onclick="openTab(event, 'Tab3')" class="headerPart students">
+                    <div class="triangle"></div>
                     <div>Студенты</div>
                 </div>
-                <div onclick="openTab(event, 'Tab3')" class="headerPart teachers">
+                <div onclick="openTab(event, 'Tab4')" class="headerPart teachers">
                     <div class="triangle"></div>
                     <div>Преподаватели</div>
                 </div>
@@ -57,10 +61,41 @@
 
             <div class="course">
                 <div class="courseT">
-                    <p>Курс:</p> <input type="text">
+
+                    <label for="courseSelect">Степень:</label>
+
+                    <select name="corse" id="courseSelect">
+                        <option disabled selected>--Please choose an option--</option>
+                        <option value="Бакалавр">Бакалавр</option>
+                        <option value="Магистратура">Магистратура</option>
+                    </select>
+
                 </div>
                 <div class="courseT">
-                    <p>Группа:</p> <input type="text">
+
+                    <label for="courseSelect">Курс:</label>
+
+                    <select name="corse" id="courseSelect">
+                        <option disabled selected>--Please choose an option--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+
+                </div>
+                <div class="courseT">
+
+                    <label for="courseSelect">Группа:</label>
+
+                    <select name="group" id="groupSelect" onchange="">
+                        <option disabled selected>--Please choose an option--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+
                 </div>
 
             </div>
@@ -73,94 +108,53 @@
                         <p>№</p>
                     </div>
                     <div class="lesTeach">
-                        <p>lesson name: </p>
+                        <p>Название предмета: </p>
                     </div>
                     <div class="lesTeach">
-                        <p>teacher name: </p>
+                        <p>Преподаватель: </p>
                     </div>
                     <div class="lesTeach">
-                        <p>audition: </p>
+                        <p>Аудитория: </p>
                     </div>
                     <div class="lesTeach">
-                        <p>type: </p>
+                        <p>Тип занятия: </p>
+                    </div>
+                    
+                    <div class="lesTeach lesson_add">
+                        Добавить занятие
                     </div>
                 </div>
-
 
                 <div class="lesson">
                     <div class="numb">
                         <p id="2">1</p>
                     </div>
-                    <div>
-                        <div class="showBlock" id="2">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
+
+                    <div class="showBlock" id="2">
+                        <div class="tipe">
+                            <input type="text" placeholder="Постоянно">
                         </div>
                     </div>
 
-                    <div>
-                        <div class="showBlock" id="2">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
+                    <div class="showBlock" id="2">
+                        <div class="tipe">
+                            <input type="text" placeholder="Постоянно">
                         </div>
                     </div>
 
-                    <div>
-                        <div class="showBlock" id="2">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
+                    <div class="showBlock" id="2">
+                        <div class="tipe">
+                            <input type="text" placeholder="Постоянно">
                         </div>
                     </div>
 
-                    <div>
-                        <div class="showBlock" id="2">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lesson">
-                    <div class="numb">
-                        <p id="1">1</p>
-                    </div>
-                    <div>
-                        <div class="showBlock" id="1">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="showBlock" id="1">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="showBlock" id="1">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="showBlock" id="1">
-                            <div class="tipe">
-                                <input type="text" placeholder="Постоянно">
-                            </div>
+                    <div class="showBlock" id="2">
+                        <div class="tipe">
+                            <input type="text" placeholder="Постоянно">
                         </div>
                     </div>
                 </div>
 
-                <!-- ________________________________________________________ -->
                 <div class="custom-menu">
                     <div class="btn btn_tipe_6 addPad">Постоянно</div>
                     <div class="btn btn_tipe_1">
@@ -218,7 +212,6 @@
                 </div>
 
 
-
             </div>
 
 
@@ -232,6 +225,8 @@
 
 
         <div id="Tab3" class="tabcontent"> 345</div>
+
+        <div id="Tab4" class="tabcontent"> 456</div>
 
     </main>
 

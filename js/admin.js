@@ -6,6 +6,7 @@
 //   document.body.classList.remove('dark-mode-variables');
 // }
 
+// Табы 
 
 function openTab(event, tabName) {
     var i, tabcontent, tablinks;
@@ -34,7 +35,8 @@ function openTab(event, tabName) {
     }
   }
 
-  
+  // Тема 
+
 const light = document.querySelector('.light');
 const theme = localStorage.getItem('theme');
 
@@ -59,5 +61,56 @@ light.addEventListener('click', () => {
 });
 
 
+//________________________________________________________________
 
+let count = 1;
+$(".lesson_add").on("click", function () {
+  count++;
 
+  $(".bodyTable").append(`
+    <div class="lesson del_line_${count}">
+        <div class="numb">
+            <p id="${count}">${count}</p>
+        </div>
+
+        <div class="showBlock" class="${count}">
+            <div class="tipe">
+                <input type="text" placeholder="Постоянно">
+            </div>
+        </div>
+
+        <div class="showBlock" class="${count}">
+            <div class="tipe">
+                <input type="text" placeholder="Постоянно">
+            </div>
+        </div>
+
+        <div class="showBlock" class="${count}">
+            <div class="tipe">
+                <input type="text" placeholder="Постоянно">
+            </div>
+        </div>
+
+        <div class="showBlock" class="${count}">
+            <div class="tipe">
+                <input type="text" placeholder="Постоянно">
+            </div>
+        </div>
+
+        <div class="numb lesson_del" del_line_num="${count}">
+            -
+        </div>
+    </div>
+  `);
+})
+
+$(".bodyTable").on("click", ".lesson_del", function () {
+  const delLineNum = $(this).attr("del_line_num");
+  
+  $(`.del_line_${delLineNum}`).remove();
+
+  $(".lesson .numb p").each(function (index) {
+    $(this).text(index + 1);
+    count = index + 1
+  });
+});
