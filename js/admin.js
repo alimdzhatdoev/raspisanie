@@ -6,111 +6,93 @@
 //   document.body.classList.remove('dark-mode-variables');
 // }
 
-// Табы 
+// Табы
 
 function openTab(event, tabName) {
-    var i, tabcontent, tablinks;
-  
-    tabcontent = document.getElementsByClassName("tabcontent");
-  
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-  
-    tablinks = document.getElementsByClassName("headerPart");
-  
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" activeHeader", "");
-      tablinks[i].childNodes[1].className = tablinks[i].childNodes[1].className.replace(" activeHeaderTR", "");
-    }
-  
-    document.getElementById(tabName).style.display = "block";
-  
-    if (event.currentTarget.className == undefined) {
-      tablinks[0].className += " activeHeader";
-      tablinks[0].childNodes[1].className += " activeHeaderTR";
-    } else {
-      event.currentTarget.className += " activeHeader";
-      event.currentTarget.childNodes[1].className += " activeHeaderTR";
-    }
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
   }
 
-  // Тема 
+  tablinks = document.getElementsByClassName("headerPart");
 
-const light = document.querySelector('.light');
-const theme = localStorage.getItem('theme');
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" activeHeader", "");
+    tablinks[i].childNodes[1].className = tablinks[
+      i
+    ].childNodes[1].className.replace(" activeHeaderTR", "");
+  }
 
-if (theme == 'dark') {
-  document.body.classList.add('dark-mode-variables');
-  light.setAttribute('src', '/ref/light.png');
-} else {
-  light.setAttribute('src', '/ref/dark.png'); 
+  document.getElementById(tabName).style.display = "block";
+
+  if (event.currentTarget.className == undefined) {
+    tablinks[0].className += " activeHeader";
+    tablinks[0].childNodes[1].className += " activeHeaderTR";
+  } else {
+    event.currentTarget.className += " activeHeader";
+    event.currentTarget.childNodes[1].className += " activeHeaderTR";
+  }
 }
 
-light.addEventListener('click', () => {
+// Тема
 
-  document.body.classList.toggle('dark-mode-variables');
+const light = document.querySelector(".light");
+const theme = localStorage.getItem("theme");
+
+if (theme == "dark") {
+  document.body.classList.add("dark-mode-variables");
+  light.setAttribute("src", "/ref/light.png");
+} else {
+  light.setAttribute("src", "/ref/dark.png");
+}
+
+light.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode-variables");
   let theme = "light";
   if (document.body.classList.contains("dark-mode-variables")) {
-    theme = "dark"; 
-    light.setAttribute('src', '/ref/light.png');
+    theme = "dark";
+    light.setAttribute("src", "/ref/light.png");
   } else {
-    light.setAttribute('src', '/ref/dark.png'); 
+    light.setAttribute("src", "/ref/dark.png");
   }
   localStorage.setItem("theme", theme);
 });
 
-
 //________________________________________________________________
 
-let count = 1;
-$(".lesson_add").on("click", function () {
-  count++;
+$("#stepSelect").change(function () {
+  let stepValue = $("#stepSelect").val();
+  let courseCount = 0;
 
-  $(".bodyTable").append(`
-    <div class="lesson del_line_${count}">
-        <div class="numb">
-            <p id="${count}">${count}</p>
-        </div>
+  if (stepValue == "Бакалавр") {
+    courseCount = 4;
+  } else if (stepValue == "Магистратура") {
+    courseCount = 2;
+  }
 
-        <div class="showBlock" class="${count}">
-            <div class="tipe">
-                <input type="text" placeholder="Постоянно">
-            </div>
-        </div>
+  $("#courseSelect").removeAttr("disabled");
 
-        <div class="showBlock" class="${count}">
-            <div class="tipe">
-                <input type="text" placeholder="Постоянно">
-            </div>
-        </div>
-
-        <div class="showBlock" class="${count}">
-            <div class="tipe">
-                <input type="text" placeholder="Постоянно">
-            </div>
-        </div>
-
-        <div class="showBlock" class="${count}">
-            <div class="tipe">
-                <input type="text" placeholder="Постоянно">
-            </div>
-        </div>
-
-        <div class="numb lesson_del" del_line_num="${count}">
-            -
-        </div>
-    </div>
-  `);
-})
-
-$(".bodyTable").on("click", ".lesson_del", function () {
-  const delLineNum = $(this).attr("del_line_num");
+  $("#courseSelect").text('');
   
-  $(`.del_line_${delLineNum}`).remove();
+  $("#courseSelect").append(`
+    <option disabled selected>Выберите курс</option>
+  `);
 
-  $(".lesson .numb p").each(function (index) {
-    $(this).text(index + 1);
-    count = index + 1
-  });
+  for (let i = 1; i <= courseCount; i++) {
+    $("#courseSelect").append(`
+      <option value="${i}">${i}</option>
+    `);
+  }
+});
+
+
+$("#courseSelect").change(function () {
+  $("#groupSelect").removeAttr("disabled");
+});
+
+$("#groupSelect").change(function () {
+  $(".bodyTable").css("display", "flex");
 });

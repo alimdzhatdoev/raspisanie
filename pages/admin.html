@@ -56,152 +56,77 @@
 
         <div id="Tab1" class="tabcontent">
 
-            <!-- ____________________________________________________________ -->
-
-
             <div class="course">
-                <div class="courseT">
+                <div class="course_block">
+                    <div class="courseT">
 
-                    <label for="courseSelect">Степень:</label>
+                        <label for="stepSelect">Степень:</label>
 
-                    <select name="corse" id="courseSelect">
-                        <option disabled selected>--Please choose an option--</option>
-                        <option value="Бакалавр">Бакалавр</option>
-                        <option value="Магистратура">Магистратура</option>
-                    </select>
+                        <select name="step" id="stepSelect">
+                            <option disabled selected>Выберите степень</option>
+                            <option value="Бакалавр">Бакалавр</option>
+                            <option value="Магистратура">Магистратура</option>
+                        </select>
 
+                    </div>
+                    <div class="courseT">
+
+                        <label for="courseSelect">Курс:</label>
+
+                        <select name="corse" id="courseSelect" disabled>
+                            <option disabled selected>Выберите курс</option>
+                        </select>
+
+                    </div>
+                    <div class="courseT">
+
+                        <label for="groupSelect">Группа:</label>
+
+                        <select name="group" id="groupSelect" disabled>
+                            <option disabled selected>Выберите группу</option>
+                            <option value="ПМ-231">ПМ-231</option>
+                            <option value="ПМ-232">ПМ-232</option>
+                            <option value="ПМ-233">ПМ-233</option>
+                            <option value="ПМ-234">ПМ-234</option>
+                        </select>
+
+                    </div>
                 </div>
-                <div class="courseT">
 
-                    <label for="courseSelect">Курс:</label>
-
-                    <select name="corse" id="courseSelect">
-                        <option disabled selected>--Please choose an option--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-
-                </div>
-                <div class="courseT">
-
-                    <label for="courseSelect">Группа:</label>
-
-                    <select name="group" id="groupSelect" onchange="">
-                        <option disabled selected>--Please choose an option--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-
-                </div>
+                <button>Сохранить</button>
 
             </div>
 
-
-            <div class="bodyTable">
-
-                <div class="lesTeachBlock">
-                    <div class="numb">
-                        <p>№</p>
-                    </div>
-                    <div class="lesTeach">
-                        <p>Название предмета: </p>
-                    </div>
-                    <div class="lesTeach">
-                        <p>Преподаватель: </p>
-                    </div>
-                    <div class="lesTeach">
-                        <p>Аудитория: </p>
-                    </div>
-                    <div class="lesTeach">
-                        <p>Тип занятия: </p>
-                    </div>
-                    
-                    <div class="lesTeach lesson_add">
-                        Добавить занятие
+            <div class="custom-menu">
+                <div class="btn btn_tipe_6 addPad">Постоянно</div>
+                <div class="btn btn_tipe_1">
+                    <div class="blockText">
+                        <div class="block_ch addPad addBB">Числитель</div>
+                        <div class="block_z addPad">Знаменатель</div>
                     </div>
                 </div>
-
-                <div class="lesson">
-                    <div class="numb">
-                        <p id="2">1</p>
-                    </div>
-
-                    <div class="showBlock" id="2">
-                        <div class="tipe">
-                            <input type="text" placeholder="Постоянно">
-                        </div>
-                    </div>
-
-                    <div class="showBlock" id="2">
-                        <div class="tipe">
-                            <input type="text" placeholder="Постоянно">
-                        </div>
-                    </div>
-
-                    <div class="showBlock" id="2">
-                        <div class="tipe">
-                            <input type="text" placeholder="Постоянно">
-                        </div>
-                    </div>
-
-                    <div class="showBlock" id="2">
-                        <div class="tipe">
-                            <input type="text" placeholder="Постоянно">
-                        </div>
+                <div class="btn btn_tipe_2">
+                    <div class="blockText blockTipeChange">
+                        <div class="block_p1">Подгруппа 1</div>
+                        <div class="block_p2">Подгруппа 2</div>
                     </div>
                 </div>
-
-                <div class="custom-menu">
-                    <div class="btn btn_tipe_6 addPad">Постоянно</div>
-                    <div class="btn btn_tipe_1">
-                        <div class="blockText">
-                            <div class="block_ch addPad addBB">Числитель</div>
-                            <div class="block_z addPad">Знаменатель</div>
+                <div class="btn btn_tipe_3">
+                    <div class="blockText">
+                        <div class="block_ch">
+                            <div class="blockText blockTipeChange addBB">
+                                <div class="block_p1">Подгруппа 1 (Ч)</div>
+                                <div class="block_p2">Подгруппа 2 (Ч)</div>
+                            </div>
                         </div>
+                        <div class="block_z addPad">Знаменатель</div>
                     </div>
-                    <div class="btn btn_tipe_2">
-                        <div class="blockText blockTipeChange">
-                            <div class="block_p1">Подгруппа 1</div>
-                            <div class="block_p2">Подгруппа 2</div>
-                        </div>
-                    </div>
-                    <div class="btn btn_tipe_3">
-                        <div class="blockText">
+                </div>
+                <div class="btn btn_tipe_4">
+                    <div class="blockText">
+                        <div class="block_ch addPad addBB">Числитель</div>
+                        <div class="block_z">
                             <div class="block_ch">
-                                <div class="blockText blockTipeChange addBB">
-                                    <div class="block_p1">Подгруппа 1 (Ч)</div>
-                                    <div class="block_p2">Подгруппа 2 (Ч)</div>
-                                </div>
-                            </div>
-                            <div class="block_z addPad">Знаменатель</div>
-                        </div>
-                    </div>
-                    <div class="btn btn_tipe_4">
-                        <div class="blockText">
-                            <div class="block_ch addPad addBB">Числитель</div>
-                            <div class="block_z">
-                                <div class="block_ch">
-                                    <div class="blockText blockTipeChange">
-                                        <div class="block_p1">Подгруппа 1 (З)</div>
-                                        <div class="block_p2">Подгруппа 2 (З)</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn btn_tipe_5">
-                        <div class="blockText">
-                            <div class="block_ch">
-                                <div class="blockText blockTipeChange addBB">
-                                    <div class="block_p1">Подгруппа 1 (Ч)</div>
-                                    <div class="block_p2">Подгруппа 2 (Ч)</div>
-                                </div>
-                            </div>
-                            <div class="block_z">
                                 <div class="blockText blockTipeChange">
                                     <div class="block_p1">Подгруппа 1 (З)</div>
                                     <div class="block_p2">Подгруппа 2 (З)</div>
@@ -210,13 +135,23 @@
                         </div>
                     </div>
                 </div>
-
-
+                <div class="btn btn_tipe_5">
+                    <div class="blockText">
+                        <div class="block_ch">
+                            <div class="blockText blockTipeChange addBB">
+                                <div class="block_p1">Подгруппа 1 (Ч)</div>
+                                <div class="block_p2">Подгруппа 2 (Ч)</div>
+                            </div>
+                        </div>
+                        <div class="block_z">
+                            <div class="blockText blockTipeChange">
+                                <div class="block_p1">Подгруппа 1 (З)</div>
+                                <div class="block_p2">Подгруппа 2 (З)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-            <!-- ____________________________________________________________ -->
-
 
         </div>
 
