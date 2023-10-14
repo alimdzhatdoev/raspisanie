@@ -28,15 +28,20 @@
                 </div>
                 <div onclick="openTab(event, 'Tab2')" class="headerPart students">
                     <div class="triangle"></div>
-                    <div>Группы</div>
-                </div>
-                <div onclick="openTab(event, 'Tab3')" class="headerPart students">
-                    <div class="triangle"></div>
                     <div>Студенты</div>
                 </div>
+                <div onclick="openTab(event, 'Tab3')" class="headerPart groups">
+                    <div class="triangle"></div>
+                    <div>Группы</div>
+                </div>
+
                 <div onclick="openTab(event, 'Tab4')" class="headerPart teachers">
                     <div class="triangle"></div>
                     <div>Преподаватели</div>
+                </div>
+                <div onclick="openTab(event, 'Tab5')" class="headerPart auditions">
+                    <div class="triangle"></div>
+                    <div>Аудитории</div>
                 </div>
             </div>
 
@@ -53,7 +58,7 @@
     </header>
 
     <main>
-
+        <!-- Расписание -->
         <div id="Tab1" class="tabcontent">
 
             <div class="course">
@@ -154,15 +159,310 @@
             </div>
 
         </div>
+        <!-- Расписание -->
+        <!--  -->
+        <!-- Студенты -->
+        <div id="Tab2" class="tabcontent tabStudents">
+            <section class="addStudentSection">
+                <div>
+                    <div class="addPersonButton">Добавить студента</div>
+                </div>
+
+                <div class="addStudentBlock">
+                    <div class="addPerson">
+                        ФИО:
+                        <input type="text" placeholder="ФИО">
+                    </div>
+                    <div class="addPerson">
+                        Почта:
+                        <input type="text" placeholder="Почта">
+                    </div>
+                    <div class="addPerson">
+                        Номер телефона:
+                        <input type="text" placeholder="Номер телефона">
+                    </div>
+                    <div class="addPerson">
+                        Номер телефона родителя:
+                        <input type="text" placeholder="Номер телефона родителя">
+                    </div>
+                    <div class="addPerson">
+                        Группа:
+                        <input type="text" placeholder="Группа">
+                    </div>
+                    <div class="addPerson">
+                        Курс:
+                        <input type="text" placeholder="Курс">
+                    </div>
+                    <div class="addPerson">
+                        Номер зачётки:
+                        <input type="text" placeholder="Номер зачётки">
+                    </div>
+                    <div class="addPerson">
+                        Логин:
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="addPerson">
+                        Пароль:
+                        <input type="text" placeholder="">
+                    </div>
+
+                    <div class="addPersonButtonForm">
+                        <button>Сохранить студента</button>
+                    </div>
 
 
-        <div id="Tab2" class="tabcontent"> 234</div>
+                </div>
+
+                <div class="allPersonsShow">
 
 
-        <div id="Tab3" class="tabcontent"> 345</div>
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Группа
+                            </div>
+                            <div class="person personDiaryNum">
+                                Номер зачётки
+                            </div>
+                        </div>
+                        <div class="personChange">
+                            отчислить
+                        </div>
+                    </div>
 
-        <div id="Tab4" class="tabcontent"> 456</div>
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Группа
+                            </div>
+                            <div class="person personDiaryNum">
+                                Номер зачётки
+                            </div>
+                        </div>
+                        <div class="personChange">
+                            отчислить
+                        </div>
+                    </div>
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Группа
+                            </div>
+                            <div class="person personDiaryNum">
+                                Номер зачётки
+                            </div>
+                        </div>
+                        <div class="personChange">
+                            отчислить
+                        </div>
+                    </div>
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Группа
+                            </div>
+                            <div class="person personDiaryNum">
+                                Номер зачётки
+                            </div>
+                        </div>
+                        <div class="personChange">
+                            отчислить
+                        </div>
+                    </div>
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Группа
+                            </div>
+                            <div class="person personDiaryNum">
+                                Номер зачётки
+                            </div>
+                        </div>
+                        <div class="personChange">
+                            отчислить
+                        </div>
+                    </div>
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Группа
+                            </div>
+                            <div class="person personDiaryNum">
+                                Номер зачётки
+                            </div>
+                        </div>
+                        <div class="personChange">
+                            отчислить
+                        </div>
+                    </div>
 
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+        <!-- Студенты -->
+        <!--  -->
+        <!-- Группы -->
+        <div id="Tab3" class="tabcontent tabGroups">345
+            <div class="addGroupBlock">
+                <div class="addPerson">
+                    <input type="text" placeholder="Курс">
+                </div>
+                <div class="addPerson">
+                    <input type="text" placeholder="Группа">
+                </div>
+            </div>
+        </div>
+        <!-- Группы -->
+        <!--  -->
+        <!-- Преподаватели -->
+        <div id="Tab4" class="tabcontent tabTeachers">
+            <section class="addTeacherSection">
+                <div>
+                    <div class="addTeacherButton">Добавить преподователя</div>
+                </div>
+
+
+                <div class="addTeacherBlock">
+                    <div class="addPerson">
+                        ФИО:
+                        <input type="text" placeholder="ФИО">
+                    </div>
+                    <div class="addPerson">
+                        Почта:
+                        <input type="text" placeholder="Почта">
+                    </div>
+                    <div class="addPerson">
+                        Номер телефона:
+                        <input type="text" placeholder="Номер телефона">
+                    </div>
+                    <div class="addPerson">
+                        Должность:
+                        <input type="text" placeholder="Должность">
+                    </div>
+                    <div class="addPerson">
+                        Логин:
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="addPerson">
+                        Пароль:
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="addPersonButtonForm">
+                        <button>Сохранить студента</button>
+                    </div>
+
+                </div>
+
+                <div class="allPersonsShow">
+
+
+
+                    <div class="personShow">
+                        <div class="personInfo">
+                            <div class="person personName">
+                                Имя
+                            </div>
+                            <div class="person personMail">
+                                Почта
+                            </div>
+                            <div class="person personPhone">
+                                Номер телефона
+                            </div>
+                            <div class="person personGroup">
+                                Должность
+                            </div>
+
+                        </div>
+                        <div class="personChange">
+                            удалить
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+        </div>
+        <!-- Преподаватели -->
+        <!--  -->
+        <!-- Аудитории -->
+        <div id="Tab5" class="tabcontent tabAuditions">567
+            <section class="auditionSection">
+
+                <div class="addAuditionBlock">
+                    <input type="text" placeholder="Этаж">
+                    <input type="text" placeholder="Кабинет">
+                    <div>
+                        Компьютерный класс
+                        <input type="checkbox" name="" id="">
+                    </div>
+                    <button>Добавить</button>
+                </div>
+
+            </section>
+
+        </div>
+        <!-- Аудитории -->
     </main>
 
 

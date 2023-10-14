@@ -75,8 +75,8 @@ $("#stepSelect").change(function () {
 
   $("#courseSelect").removeAttr("disabled");
 
-  $("#courseSelect").text('');
-  
+  $("#courseSelect").text("");
+
   $("#courseSelect").append(`
     <option disabled selected>Выберите курс</option>
   `);
@@ -88,7 +88,6 @@ $("#stepSelect").change(function () {
   }
 });
 
-
 $("#courseSelect").change(function () {
   $("#groupSelect").removeAttr("disabled");
 });
@@ -96,3 +95,11 @@ $("#courseSelect").change(function () {
 $("#groupSelect").change(function () {
   $(".bodyTable").css("display", "flex");
 });
+
+$(".addPersonButton").click(function () {
+  $(".addStudentBlock").toggle();
+}); 
+
+$(".addTeacherButton").click(function () {
+  $(".addTeacherBlock").toggle();
+}); 

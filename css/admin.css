@@ -370,7 +370,7 @@ header .activeHeaderTR {
   align-items: center;
 }
 
-.course button{
+.course button {
   cursor: pointer;
 }
 
@@ -414,3 +414,136 @@ header .activeHeaderTR {
 }
 
 /* ________________________________ */
+
+.addStudentSection,
+.addTeacherSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addStudentBlock,
+.addTeacherBlock,
+.addGroupBlock {
+  width: 500px;
+}
+
+.addStudentBlock,
+.addTeacherBlock {
+  /* position: absolute;
+  top: 75px;
+  left: 15px;
+  transform: translate(-650px, 0); */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-primary);
+  transition: all 0.5s ease-in-out;
+}
+
+.addPersonButtonForm {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.addPersonButtonForm button {
+  /* width: 200px; */
+  height: 35px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+.addPerson {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.addPerson:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.addPerson input {
+  outline: none;
+  padding: 0 10px;
+  border: 1px solid var(--color-primary);
+  min-height: 35px;
+}
+.addPersonButton,
+.addTeacherButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  width: 300px;
+  height: 40px;
+}
+
+.addPersonButton:hover,
+.addTeacherButton:hover {
+  background-color: var(--color-primary);
+}
+
+/* Отображение  */
+.allPersonsShow {
+  display: flex;
+  flex-direction: column;
+}
+.personShow {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--color-primary);
+  padding: 15px;
+  margin-top: -1px;
+}
+.personShow:hover{
+  background-color: var(--color-primary-light);
+}
+.personInfo {
+  display: flex;
+  /* padding: 5px; */
+  /* gap: 10px; */
+  /* border: 1px solid var(--color-primary); */
+}
+.person {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  /* border: 1px solid var(--color-primary); */
+}
+
+.personChange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-primary);
+  height: 30px;
+  width: 150px;
+}
+
+/* Отображение  */
+
+/* Аудитории */
+
+.addAuditionBlock {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  gap: 10px;
+}
+/* Аудитории */

@@ -68,8 +68,6 @@ function changeBlockInside(day) {
 
       if (event.button === 2) {
         block = this.classList[1];
-        console.log(block)
-
         showContextMenu();
         document.addEventListener("mousedown", closeContextMenu);
       }
