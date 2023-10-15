@@ -194,3 +194,42 @@ addDayLessons("friday")
 addDayLessons("saturday")
 
 
+$("#showData").click(function(){
+  $.getJSON("/ref/list.json", function(data) {
+    $(".bodyTable").css("display", "flex");
+    
+    let special = $("#stepSelect").val();
+    let course = $("#courseSelect").val();
+    let group = $("#groupSelect").val();
+
+    let thisData = {};
+
+    $.each(data, function(element){
+      if (special == data[element].special && course == data[element].course && group == data[element].group){
+        thisData = data[element]
+      }
+    })
+
+    
+    $(".lesson ").remove()
+
+    $.each(thisData.days, function(day){
+      count_monday = 0;
+
+      $.each(thisData.days[day], function(lessons){
+        count_monday++;
+
+        $(`.${day} .lesTeachBlock`).css("display", "flex");
+        addBlockNew(day, count_monday);
+
+        for (let i = 0; i <= 3; i++) {
+          $(`.${day}_contextMenu_lesson${count_monday} input`).eq(i).val(thisData.days[day][lessons][i])
+        }
+
+        changeBlockInside(day);
+
+      })
+    })
+
+  });
+});

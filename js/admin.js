@@ -67,9 +67,9 @@ $("#stepSelect").change(function () {
   let stepValue = $("#stepSelect").val();
   let courseCount = 0;
 
-  if (stepValue == "Бакалавр") {
+  if (stepValue == "bachelor") {
     courseCount = 4;
-  } else if (stepValue == "Магистратура") {
+  } else if (stepValue == "master") {
     courseCount = 2;
   }
 
@@ -92,14 +92,77 @@ $("#courseSelect").change(function () {
   $("#groupSelect").removeAttr("disabled");
 });
 
-$("#groupSelect").change(function () {
-  $(".bodyTable").css("display", "flex");
-});
+// $("#groupSelect").change(function () {
+//   $(".bodyTable").css("display", "flex");
+// });
 
 $(".addPersonButton").click(function () {
   $(".addStudentBlock").toggle();
-}); 
+});
 
 $(".addTeacherButton").click(function () {
   $(".addTeacherBlock").toggle();
-}); 
+});
+
+// ______________________________
+
+// console.log(tableList);
+
+$(".addStudentButton").click(addStudent);
+
+function addStudent() {
+  // let stage = $("#stepSelect").val();
+  // let course = $("#courseSelect").val();
+  // let group = $("#groupSelect").val();
+  // let lessonNumber = $(".bodyTable_title__instrument select").val();
+  // let lessons;
+  // let lesson;
+  $(".tipe input").each(function () {
+    console.log($(this).val());
+  });
+}
+
+
+
+// ____________________________________________________
+
+// function extractData(data) {
+//   for (var key in data) {
+//     if (data.hasOwnProperty(key)) {
+//       if (typeof data[key] === "object") {
+//         // Если элемент - объект, вызываем функцию рекурсивно
+//         extractData(data[key]);
+//       } else if (Array.isArray(data[key])) {
+//         // Если элемент - массив, перебираем его
+//         for (var i = 0; i < data[key].length; i++) {
+//           // Делаем что-то с элементами массива, например, data[key][i]
+//         }
+//       } else {
+//         // Элемент - простой тип данных, можно извлечь значение
+//         // Например, для вывода в консоль:
+//         console.log(key + ": " + data[key]);
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+// ____________________________________________________
+
+
+
+
+
+// $(".tableTestTitle").html(items);
+
+// $(".tableTestTitle").html("Test");
+
+// import tableList from "/ref/list.json";
+// console.log(typeof tableList);

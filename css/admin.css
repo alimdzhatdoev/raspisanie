@@ -511,6 +511,7 @@ header .activeHeaderTR {
 }
 .personShow:hover{
   background-color: var(--color-primary-light);
+  /* box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.4) inset; */
 }
 .personInfo {
   display: flex;
