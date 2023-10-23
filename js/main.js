@@ -5,15 +5,15 @@ let count_monday = 0;
 var block = "";
 
 $("#Tab1").append(
-  htmlBlockCreate('monday', 'Понедельник') + 
-  htmlBlockCreate('tuesday', 'Вторник') +
-  htmlBlockCreate('wednesday', 'Среда') +
-  htmlBlockCreate('thursday', 'Четверг') +
-  htmlBlockCreate('friday', 'Пятница') +
-  htmlBlockCreate('saturday', 'Суббота')
-)
+  htmlBlockCreate("monday", "Понедельник") +
+    htmlBlockCreate("tuesday", "Вторник") +
+    htmlBlockCreate("wednesday", "Среда") +
+    htmlBlockCreate("thursday", "Четверг") +
+    htmlBlockCreate("friday", "Пятница") +
+    htmlBlockCreate("saturday", "Суббота")
+);
 
-function htmlBlockCreate(day, name){
+function htmlBlockCreate(day, name) {
   return `
     <div class="bodyTable ${day}">
       <div class="bodyTable_title">
@@ -21,15 +21,62 @@ function htmlBlockCreate(day, name){
             ${name}
           </div>
           <div class="bodyTable_title__instrument">
-              <select>
-                <option disabled selected>Количество пар</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <div class="bodyTable_title__instrument___blocks">
+                  <button class="bodyTable_title__button" dayChoice=${day} isOpened="off">Выбрать пары</button>
+
+                  <div class="open_check_lessons">
+                      <ul>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="1">
+                                  Пара №1
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="2">
+                                  Пара №2
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="3">
+                                  Пара №3
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="4">
+                                  Пара №4
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="5">
+                                  Пара №5
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="6">
+                                  Пара №6
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="7">
+                                  Пара №7
+                              </label>
+                          </li>
+                          <li>
+                              <label>
+                                  <input type="checkbox" name="" checkBlock="off" countNum="8">
+                                  Пара №8
+                              </label>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
           </div>
       </div>
 
@@ -54,11 +101,10 @@ function htmlBlockCreate(day, name){
 
 
     </div>
-  `
+  `;
 }
 
 function changeBlockInside(day) {
-  
   const customBlock = document.querySelectorAll(`.${day} .showBlock`);
   const customMenu = document.querySelector(".custom-menu");
 
@@ -125,7 +171,7 @@ function changeBlockInside(day) {
   });
 }
 
-function addBlockNew(day, count){
+function addBlockNew(day, count) {
   $(`.${day}`).append(`
     <div class="lesson ${day}_del_line_${count}">
         <div class="numb">
@@ -163,73 +209,153 @@ function addBlockNew(day, count){
   `);
 }
 
-function addDayLessons(day){
-  $(`.${day} select`).change(function(){
-    let lesson_count = +$(`.${day} select`).val()
+function addDayLessons(day) {
+  let checkMass = [];
+
+  $(`.${day} .open_check_lessons input`).click(function () {
+    if ($(this).attr("checkBlock") == "off") {
+      $(this).attr("checkBlock", "on");
+      checkMass.push($(this).attr("countNum"));
+    } else {
+      $(this).attr("checkBlock", "off");
+
+      for (let i = 0; i < checkMass.length; i++) {
+        if ($(this).attr("countNum") == checkMass[i]) {
+          checkMass.splice(i, 1);
+        }
+      }
+    }
+
+    checkMass.sort(function (a, b) {
+      return a - b;
+    });
+
+    // let lesson_count = +$(`.${day} select`).val();
     $(`.${day} .lesTeachBlock`).css("display", "flex");
-  
-    count_monday = 0;
+
+    // count_monday = 0;
     $(`.${day} .lesson`).remove();
-  
-    for (let i = 0; i < lesson_count; i++) {
-      count_monday++;
-  
-      addBlockNew(day, count_monday)
-    
+
+    for (let i = 0; i < checkMass.length; i++) {
+      addBlockNew(day, checkMass[i]);
+
       changeBlockInside(day);
     }
-  })
+  });
 
-  $(`.${day}`).on("click", " .lesson_del", function(){
+  $(`.${day}`).on("click", " .lesson_del", function () {
     let thisAttr = this.attributes[1].value;
-    $(`.${thisAttr} input`).val("")
-  })
+    $(`.${thisAttr} input`).val("");
+  });
 }
 
-addDayLessons("monday")
-addDayLessons("tuesday")
-addDayLessons("wednesday")
-addDayLessons("thursday")
-addDayLessons("friday")
-addDayLessons("saturday")
+addDayLessons("monday");
+addDayLessons("tuesday");
+addDayLessons("wednesday");
+addDayLessons("thursday");
+addDayLessons("friday");
+addDayLessons("saturday");
 
-
-$("#showData").click(function(){
-  $.getJSON("/ref/list.json", function(data) {
+$("#showData").click(function () {
+  $.getJSON("/ref/list.json", function (data) {
     $(".bodyTable").css("display", "flex");
-    
+
     let special = $("#stepSelect").val();
     let course = $("#courseSelect").val();
     let group = $("#groupSelect").val();
 
     let thisData = {};
 
-    $.each(data, function(element){
-      if (special == data[element].special && course == data[element].course && group == data[element].group){
-        thisData = data[element]
+    $.each(data, function (element) {
+      if (
+        special == data[element].special &&
+        course == data[element].course &&
+        group == data[element].group
+      ) {
+        thisData = data[element];
       }
-    })
+    });
 
-    
-    $(".lesson ").remove()
+    $(".lesson ").remove();
 
-    $.each(thisData.days, function(day){
+    $.each(thisData.days, function (day) {
       count_monday = 0;
 
-      $.each(thisData.days[day], function(lessons){
+      $.each(thisData.days[day], function (lessons) {
         count_monday++;
 
         $(`.${day} .lesTeachBlock`).css("display", "flex");
         addBlockNew(day, count_monday);
 
         for (let i = 0; i <= 3; i++) {
-          $(`.${day}_contextMenu_lesson${count_monday} input`).eq(i).val(thisData.days[day][lessons][i])
+          $(`.${day}_contextMenu_lesson${count_monday} input`)
+            .eq(i)
+            .val(thisData.days[day][lessons][i]);
         }
 
         changeBlockInside(day);
-
-      })
-    })
-
+      });
+    });
   });
 });
+
+$(`.bodyTable_title__button`).click(function () {
+  let thisDay = $(this).attr("dayChoice");
+
+  if ($(this).attr("isOpened") == "off") {
+    $(this).attr("isOpened", "on");
+
+    $(`.open_check_lessons`).hide();
+    $(`.${thisDay} .open_check_lessons`).show();
+  } else {
+    $(this).attr("isOpened", "off");
+    $(`.${thisDay} .open_check_lessons`).hide();
+  }
+
+  // $(`.open_check_lessons`).css("display", "none");
+
+
+  // $(`.${thisDay} .open_check_lessons`).toggle();
+});
+
+// special, course, group, day[lessonsNumber][lessonName, teacherName, audition, lessonType]
+function addLessonsToFile() {}
+let step;
+let course;
+let group;
+let lessonsNumber;
+
+let data;
+
+$(".addStudentButton").click(function () {
+  data = $(".showBlock");
+
+  console.log(data);
+});
+
+/* <select>
+<option disabled selected>Количество пар</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select> */
+
+// $(".open_check_lessons").on("click", "input", function () {
+
+//   if ($(this).attr("checkBlock") == "off") {
+//     $(this).attr("checkBlock", "on");
+//     checkMass.push($(this).attr("countNum"));
+//   } else {
+//     $(this).attr("checkBlock", "off");
+
+//     for (let i = 0; i < checkMass.length; i++) {
+//       if ($(this).attr("countNum") == checkMass[i]) {
+//         checkMass.splice(i, 1);
+//       }
+//     }
+//   }
+//   console.log(checkMass);
+// });
